@@ -40,4 +40,4 @@ jobs:
         run: test -z $(go fmt ./...)
 
       - name: Lint code with staticcheck
-        uses: dominikh/staticcheck-action
+        uses: dominikh/staticcheck-action@v1
