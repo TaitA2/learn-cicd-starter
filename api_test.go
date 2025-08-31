@@ -25,7 +25,7 @@ func TestGetApiKey(t *testing.T) {
 		"too few splits":  {input: "ApiKey", expected: response{apiKey: "", err: errors.New("malformed authorization header")}},
 		"wrong split[0]":  {input: "NotApiKey ", expected: response{apiKey: "", err: errors.New("malformed authorization header")}},
 		"too many splits": {input: "Not Api Key", expected: response{apiKey: "", err: errors.New("malformed authorization header")}},
-		"working":         {input: "ApiKey 1245", expected: response{apiKey: "12345", err: nil}},
+		"working":         {input: "ApiKey 12345", expected: response{apiKey: "12345", err: nil}},
 	}
 	for name, c := range cases {
 		t.Run(name, func(t *testing.T) {
